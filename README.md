@@ -17,6 +17,13 @@ Password Split encrypts your password with AES‑GCM and splits only the encrypt
 - Optional description stored in metadata for context
 - Dark/light UI, responsive, accessible
 
+## Planned Features
+
+- Email notifications to regularly check recoverability of the key
+- Steganography support for hiding splits in images
+- Constant maintenance and security updates
+- Cover hosting and development costs
+
 Demo: try with the sample password `MyPassword123` without a license. For custom passwords, the app uses a short‑lived license ($2 for 20 minutes) purchased in‑app via Stripe.
 
 ## How It Works
