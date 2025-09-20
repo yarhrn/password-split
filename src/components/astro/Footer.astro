@@ -1,5 +1,6 @@
 ---
 import Shield from '@lucide/astro/icons/shield';
+import Github from '@lucide/astro/icons/github';
 import { getCollection } from 'astro:content';
 
 const blogPosts = await getCollection('blog');
@@ -82,9 +83,15 @@ const blogPosts = await getCollection('blog');
         <p class="text-sm text-gray-500 dark:text-gray-400">
           © {new Date().getFullYear()} Password Split. Open source software for secure password management.
         </p>
-        <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <Shield class="h-4 w-4" />
-          <span>100% Client-Side Processing</span>
+        <div class="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+          <div class="flex items-center space-x-2">
+            <Shield class="h-4 w-4" />
+            <span>100% Client-Side Processing</span>
+          </div>
+          <a href="https://github.com/yarhrn/password-split" class="flex items-center space-x-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            <Github class="h-4 w-4" />
+            <span>GitHub</span>
+          </a>
         </div>
       </div>
     </div>
