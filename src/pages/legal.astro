@@ -1,0 +1,95 @@
+---
+import Layout from '@root/components/astro/Layout.astro';
+---
+
+<Layout
+  title="Legal - Password Split"
+  description="Legal terms and conditions for Password Split - important information about usage, warranties, and liability."
+>
+  <div class="px-4 py-16">
+    <div class="container mx-auto max-w-4xl">
+      <div class="mb-12 text-center">
+        <h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Legal Terms</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400">Last updated: {new Date().toLocaleDateString()}</p>
+      </div>
+
+      <div class="rounded-xl border border-gray-200 bg-white p-8 shadow-lg transition-colors dark:border-gray-700 dark:bg-gray-800">
+        <div class="prose prose-gray dark:prose-invert max-w-none">
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Acceptance of Terms</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            By using Password Split, you agree to these legal terms. If you do not agree to these terms, please do not use this service.
+          </p>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Software License and Warranty Disclaimer</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            Password Split is provided "AS IS" without warranty of any kind, either express or implied, including without limitation any warranty for information, services, uninterrupted access, or products provided through or in connection with this software.
+          </p>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            Password Split specifically disclaims any and all warranties, including without limitation:
+          </p>
+          <ul class="mb-6 list-disc pl-6 text-gray-600 dark:text-gray-400">
+            <li>Any warranties concerning the availability, accuracy, usefulness, or content of information, products or services</li>
+            <li>Any warranties of title, non-infringement, merchantability or fitness for a particular purpose</li>
+            <li>Any warranties for the security or privacy of your data</li>
+            <li>Any warranties regarding the reliability or performance of the software</li>
+          </ul>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Limitation of Liability</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            In no event shall Password Split, its developers, or contributors be liable for any direct, indirect, incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way out of the use of this software, even if advised of the possibility of such damage.
+          </p>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            This limitation of liability shall apply to the fullest extent permitted by law in the applicable jurisdiction.
+          </p>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">User Responsibilities</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            You are responsible for:
+          </p>
+          <ul class="mb-6 list-disc pl-6 text-gray-600 dark:text-gray-400">
+            <li>Ensuring the security of your passwords and split fragments</li>
+            <li>Using the service in compliance with applicable laws and regulations</li>
+            <li>Backing up your data appropriately</li>
+            <li>Understanding that password recovery depends on having sufficient fragments</li>
+          </ul>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Source Availability</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            Password Split source code is available for review and audit at{' '}
+            <a
+              href="https://github.com/yarhrn/password-split"
+              class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://github.com/yarhrn/password-split
+            </a>
+            . The source code is provided under the terms of the applicable open source license. By using this software, you agree to comply with the terms of that license.
+          </p>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Governing Law</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            These terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the service is operated, without regard to its conflict of law provisions.
+          </p>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Changes to Terms</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            We reserve the right to modify these terms at any time. Changes will be reflected in the "Last updated" date at the top of this page. Continued use of the service after changes constitutes acceptance of the new terms.
+          </p>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Contact</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            If you have questions about these legal terms, please contact us through our project repository or website.
+          </p>
+
+          <div class="mt-8 rounded-lg bg-primary-50 p-6 dark:bg-primary-900/20">
+            <h3 class="mb-2 text-lg font-semibold text-primary-900 dark:text-primary-100">Important Notice</h3>
+            <p class="text-primary-700 dark:text-primary-300">
+              <strong>This software is provided "AS IS" without any warranties.</strong> Use Password Split at your own risk and ensure you understand the cryptographic principles involved in secret sharing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
