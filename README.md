@@ -60,39 +60,38 @@ Demo: try with the sample password `MyPassword123` without a license. For custom
 ## Requirements
 
 - Node.js 18+ (recommended for Astro 5)
-- Yarn, pnpm, or npm
+- pnpm, npm, or pnpm
 
 ## Getting Started
 
 Install dependencies:
 
-- Yarn: `yarn`
 - pnpm: `pnpm install`
 - npm: `npm install`
 
 Run locally:
 
-- `yarn dev` (http://localhost:4321)
+- `pnpm dev` (http://localhost:4321)
 
 Build and preview:
 
-- Build: `yarn build` (outputs to `dist/`)
-- Preview: `yarn preview`
+- Build: `pnpm build` (outputs to `dist/`)
+- Preview: `pnpm preview`
 
 Format code:
 
-- `yarn format`
+- `pnpm format`
 
 ## Testing
 
-- `yarn test` (Vitest)
+- `pnpm test` (Vitest)
 
 ## Deployment
 
 This project is configured to deploy static assets with Cloudflare using Wrangler.
 
-- Build: `yarn build`
-- Deploy: `wrangler deploy` (or `yarn release` which runs build + deploy)
+- Build: `pnpm build`
+- Deploy: `wrangler deploy` (or `pnpm release` which runs build + deploy)
 
 See `wrangler.toml` for configuration (assets directory: `./dist`). Ensure Wrangler is authenticated with your Cloudflare account.
 
