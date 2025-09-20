@@ -1,0 +1,92 @@
+---
+import Shield from '@lucide/astro/icons/shield';
+import { getCollection } from 'astro:content';
+
+const blogPosts = await getCollection('blog');
+---
+
+<footer class="border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
+  <div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+      <!-- Brand Section -->
+      <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+          <img src="/logo.webp" alt="Password Split Logo" class="h-8 w-8 object-contain" />
+          <span class="text-lg font-bold text-primary-600 dark:text-primary-400">Password Split</span>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Secure password splitting using cryptographic secret sharing. All processing happens locally in your browser for maximum privacy.
+        </p>
+      </div>
+
+      <!-- Blog Section -->
+      <div class="space-y-4">
+        <h3 class="font-semibold text-gray-900 dark:text-white">Blog</h3>
+        <ul class="space-y-2">
+          {blogPosts.map((post) => (
+            <li>
+              <a
+                href={`/blog/${post.slug}`}
+                class="text-sm text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+              >
+                {post.data.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Links Section -->
+      <div class="space-y-4">
+        <h3 class="font-semibold text-gray-900 dark:text-white">Resources</h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="/#how-it-works"
+              class="text-sm text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+            >
+              How It Works
+            </a>
+          </li>
+          <li>
+            <a
+              href="/#password-tool"
+              class="text-sm text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+            >
+              Try Now
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Legal Section -->
+      <div class="space-y-4">
+        <h3 class="font-semibold text-gray-900 dark:text-white">Legal</h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="/privacy"
+              class="inline-flex items-center space-x-1 text-sm text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+            >
+              <Shield class="h-4 w-4" />
+              <span>Privacy Policy</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="mt-8 border-t border-gray-200 pt-8 dark:border-gray-700">
+      <div class="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          © {new Date().getFullYear()} Password Split. Open source software for secure password management.
+        </p>
+        <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+          <Shield class="h-4 w-4" />
+          <span>100% Client-Side Processing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

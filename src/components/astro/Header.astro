@@ -1,0 +1,65 @@
+---
+import Menu from '@lucide/astro/icons/menu';
+import ThemeToggle from '@root/components/astro/ThemeToggle.astro';
+
+const navigationLinks = [
+  { href: '/#how-it-works', label: 'How It Works' },
+  { href: '/#password-tool', label: 'Try Now' },
+  { href: '/blog', label: 'Our Blog' },
+];
+---
+
+<header class="sticky left-0 top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm dark:border-gray-700 dark:bg-gray-900/80">
+  <div class="flex items-center px-2 py-2">
+    <a href="/" class="flex items-center space-x-3 transition-opacity hover:opacity-80">
+      <img src="/logo.webp" alt="Password Split Logo" class="h-10 w-10 object-contain" />
+      <span class="text-xl font-bold text-primary-600 dark:text-primary-400"> Password Split </span>
+    </a>
+
+    <!-- Navigation Links -->
+    <nav class="ml-12 hidden space-x-8 md:flex">
+      {navigationLinks.map((link) => (
+        <a
+          href={link.href}
+          class="font-medium text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Spacer to push theme toggle to the right -->
+    <div class="flex-1"></div>
+
+    <!-- Mobile Menu Button -->
+    <div class="flex items-center space-x-2 md:hidden">
+      <button
+        id="mobile-menu-button"
+        class="p-2 text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+        aria-label="Toggle navigation menu"
+      >
+        <Menu />
+      </button>
+      <ThemeToggle />
+    </div>
+
+    <!-- Desktop Theme Toggle -->
+    <div class="hidden md:flex">
+      <ThemeToggle />
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <div id="mobile-menu" class="hidden border-t border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900 md:hidden">
+    <div class="space-y-1 px-4 py-2">
+      {navigationLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block px-3 py-2 font-medium text-gray-600 transition-colors hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>

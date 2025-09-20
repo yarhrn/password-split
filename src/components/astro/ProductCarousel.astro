@@ -1,0 +1,89 @@
+---
+// Product logos data
+const products = [
+  { name: '1Password', logo: '/products/1password.svg', alt: '1Password logo', link: '/blog/how-to-backup-your-1password-recovery-code' },
+  { name: 'Bitwarden', logo: '/products/bitwarden.svg', alt: 'Bitwarden logo', link: '/blog/how-to-backup-your-bitwarden-recovery-code' },
+  { name: 'Dashlane', logo: '/products/dashlane.svg', alt: 'Dashlane logo', link: '/blog/how-to-backup-your-dashlane-recovery-key' },
+  { name: 'Exodus', logo: '/products/exodus.svg', alt: 'Exodus logo', link: '/blog/how-to-backup-your-exodus-seed-phrase' },
+  { name: 'MetaMask', logo: '/products/metamask.svg', alt: 'MetaMask logo', link: '/blog/how-to-backup-your-metamask-recovery-phrase' },
+];
+---
+
+<section class="bg-gray-50 py-16 dark:bg-gray-900">
+  <div class="container mx-auto px-4">
+    <div class="mb-12 text-center">
+      <h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">Trusted by Users of Leading Platforms</h2>
+      <p class="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400">
+        Secure passwords for cryptocurrency wallets, password managers, and more — but not limited to these services
+      </p>
+    </div>
+
+    <div class="relative overflow-hidden">
+      <div class="animate-scroll flex space-x-12">
+        <!-- First set of logos -->
+        {
+          products.map(product => (
+            <div class="flex h-20 w-32 flex-shrink-0 items-center justify-center transition-opacity hover:opacity-75">
+              {product.link ? (
+                <a href={product.link} class="flex h-full w-full items-center justify-center">
+                  <img
+                    src={product.logo}
+                    alt={product.alt}
+                    class="max-h-12 max-w-full object-contain grayscale filter transition-all duration-300 hover:grayscale-0"
+                  />
+                </a>
+              ) : (
+                <img
+                  src={product.logo}
+                  alt={product.alt}
+                  class="max-h-12 max-w-full object-contain grayscale filter transition-all duration-300 hover:grayscale-0"
+                />
+              )}
+            </div>
+          ))
+        }
+        <!-- Duplicate set for seamless loop -->
+        {
+          products.map(product => (
+            <div class="flex h-20 w-32 flex-shrink-0 items-center justify-center transition-opacity hover:opacity-75">
+              {product.link ? (
+                <a href={product.link} class="flex h-full w-full items-center justify-center">
+                  <img
+                    src={product.logo}
+                    alt={product.alt}
+                    class="max-h-12 max-w-full object-contain grayscale filter transition-all duration-300 hover:grayscale-0"
+                  />
+                </a>
+              ) : (
+                <img
+                  src={product.logo}
+                  alt={product.alt}
+                  class="max-h-12 max-w-full object-contain grayscale filter transition-all duration-300 hover:grayscale-0"
+                />
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+</style>

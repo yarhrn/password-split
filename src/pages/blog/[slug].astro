@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import BlogPost from '../../components/astro/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog', ({ data }) => {
+    return data.draft !== true;
+  });
+
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Calculate reading time (rough estimate: 200 words per minute)
+const wordCount = entry.body.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200);
+---
+
+<BlogPost
+  title={entry.data.title}
+  description={entry.data.description}
+  publishDate={entry.data.publishDate}
+  tags={entry.data.tags}
+  readingTime={readingTime}
+>
+  <Content />
+</BlogPost>

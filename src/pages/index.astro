@@ -1,0 +1,38 @@
+---
+import Layout from '@root/components/astro/Layout.astro';
+import Hero from '@root/components/astro/Hero.astro';
+import ProductCarousel from '@root/components/astro/ProductCarousel.astro';
+import HowItWorks from '@root/components/astro/HowItWorks.astro';
+import PasswordSplitter from '@root/components/react/PasswordSplitter.tsx';
+---
+
+<Layout 
+  title="Password Split - Secure Password Backup Using Cryptographic Secret Sharing" 
+  description="Never lose your passwords again. Split your most important passwords into secure fragments using military-grade cryptography. Even if you lose some pieces, your passwords stay safe and recoverable."
+  type="website"
+  tags={["password security", "cryptography", "secret sharing", "password backup", "shamir secret sharing"]}
+>
+  <Hero />
+  <ProductCarousel />
+  <HowItWorks />
+
+  <section id="password-tool" class="px-4 py-16">
+    <div class="container mx-auto">
+      <div class="mb-12 text-center">
+        <h2 class="mb-4 text-3xl font-bold text-gray-900 dark:text-white">Secure Your Password in 30 Seconds</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400">Enter your password below and we'll split it into secure fragments</p>
+      </div>
+
+      <div class="rounded-xl border border-gray-200 bg-white shadow-lg transition-colors dark:border-gray-700 dark:bg-gray-800">
+        <PasswordSplitter client:only />
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="mx-auto max-w-2xl text-sm text-gray-500 dark:text-gray-400">
+          Split your passwords into multiple parts using cryptographic secret sharing. Only a threshold number of parts are needed to
+          reconstruct the original password - perfect for distributed backup strategies.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

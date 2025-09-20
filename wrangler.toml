@@ -1,0 +1,5 @@
+name = "passwordsplitcom"
+compatibility_date = "2025-8-29"
+
+[assets]
+directory = "./dist"

@@ -1,0 +1,110 @@
+---
+import Layout from '../../components/astro/Layout.astro';
+import { getCollection } from 'astro:content';
+import { Calendar, Clock, Tag } from 'lucide-react';
+
+// Get all blog posts
+const posts = await getCollection('blog', ({ data }) => {
+  return data.draft !== true;
+});
+
+// Sort by publish date (newest first)
+const sortedPosts = posts.sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+---
+
+<Layout 
+  title="Blog - Password Split Security Guides & Tutorials" 
+  description="Learn how to secure your digital life with Password Split guides and tutorials. Step-by-step instructions for backing up passwords from 1Password, Bitwarden, Dashlane, and more."
+  tags={["password security", "tutorials", "crypto wallets", "password managers", "backup guides"]}
+>
+  <main class="container mx-auto px-4 py-16">
+    <div class="mx-auto max-w-4xl">
+      <h1 class="mb-8 text-4xl font-bold text-gray-900 dark:text-white">Blog</h1>
+      <p class="mb-12 text-xl text-gray-600 dark:text-gray-300">
+        Guides, tutorials, and best practices for securing your digital life with Password Split.
+      </p>
+
+      <div class="space-y-8">
+        {
+          sortedPosts.map(post => {
+            const wordCount = post.body.split(/\s+/).length;
+            const readingTime = Math.ceil(wordCount / 200);
+            const formattedDate = new Date(post.data.publishDate).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            });
+
+            return (
+              <a href={`/blog/${post.slug}`} class="block">
+                <article class="rounded-lg border border-gray-200 bg-white p-8 shadow-md transition-all duration-300 hover:border-primary-300 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:border-primary-600">
+                  {/* Meta information */}
+                  <div class="mb-4 flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                    <div class="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <time datetime={post.data.publishDate.toISOString()}>{formattedDate}</time>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      <span>{readingTime} min read</span>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h2 class="mb-4 text-2xl font-semibold text-gray-900 transition-colors hover:text-primary-600 dark:text-white dark:hover:text-primary-400">
+                    {post.data.title}
+                  </h2>
+
+                  {/* Description */}
+                  <p class="mb-6 line-clamp-3 text-lg leading-relaxed text-gray-600 dark:text-gray-300">{post.data.description}</p>
+
+                  {/* Tags */}
+                  {post.data.tags && post.data.tags.length > 0 && (
+                    <div class="mb-6 flex flex-wrap items-center gap-2">
+                      <Tag className="w-4 h-4 text-gray-400 dark:text-gray-500" />
+                      {post.data.tags.map(tag => (
+                        <span class="inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700 dark:bg-primary-900/30 dark:text-primary-300">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Read more link */}
+                  <div class="group inline-flex items-center font-medium text-primary-600 transition-colors hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300">
+                    Read more
+                    <svg
+                      class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </article>
+              </a>
+            );
+          })
+        }
+
+        {
+          sortedPosts.length === 0 && (
+            <div class="py-12 text-center">
+              <p class="text-lg text-gray-500 dark:text-gray-400">No blog posts found. Check back soon for new content!</p>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

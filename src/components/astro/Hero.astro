@@ -1,0 +1,70 @@
+---
+import KeyRound from '@lucide/astro/icons/key-round';
+import ShieldCheck from '@lucide/astro/icons/shield-check';
+import Zap from '@lucide/astro/icons/zap';
+---
+
+<section class="px-4 py-20">
+  <div class="container mx-auto text-center">
+    <div class="mx-auto max-w-4xl">
+      <h1 class="mb-6 text-5xl font-bold text-gray-900 dark:text-white md:text-6xl">
+        Never Lose Your
+        <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent"> Passwords </span>
+        Again
+      </h1>
+
+      <p class="mb-8 text-xl leading-relaxed text-gray-600 dark:text-gray-400 md:text-2xl">
+        Split your most important passwords into secure fragments.
+        <span class="font-semibold">Even if you lose some pieces, your passwords stay safe and recoverable.</span>
+      </p>
+
+      <!-- Key Benefits -->
+      <div class="mb-12 grid gap-8 text-left md:grid-cols-3">
+        <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900">
+            <ShieldCheck color="#fb923c" />
+          </div>
+          <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Military-Grade Security</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Uses Shamir's Secret Sharing - the same cryptography trusted by governments and banks.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-secondary-100 dark:bg-secondary-900">
+            <KeyRound color="#c084fc" />
+          </div>
+          <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Disaster Proof</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Lose your phone, laptop, or USB drive? Your password can still be recovered from the remaining pieces.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800">
+          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-100 dark:bg-accent-900">
+            <Zap color="#facc15" />
+          </div>
+          <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Instantly Private</h3>
+          <p class="text-gray-600 dark:text-gray-400">
+            Everything happens in your browser. Your passwords never touch our servers or leave your device.
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="mb-8">
+        <button
+          onclick="document.getElementById('password-tool').scrollIntoView({behavior: 'smooth'})"
+          class="transform rounded-lg bg-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all transition-colors hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-xl"
+        >
+          Try It Now
+        </button>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="text-center">
+        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">✅ Client-Side Only • ✅ No Data Collection</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,79 @@
+---
+import Moon from '@lucide/astro/icons/moon';
+import Sun from '@lucide/astro/icons/sun';
+---
+
+<button
+  class="theme-toggle rounded-lg bg-gray-200 p-2 text-gray-800 transition-colors duration-200 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
+  aria-label="Toggle theme"
+>
+  <div class="theme-toggle-light-icon hidden">
+    <Sun />
+  </div>
+  <div class="theme-toggle-dark-icon hidden">
+    <Moon />
+  </div>
+</button>
+
+<script is:inline>
+  function getThemePreference() {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function updateAllThemeToggles() {
+    const theme = getThemePreference();
+    const isDark = theme === 'dark';
+
+    document.documentElement.classList.toggle('dark', isDark);
+
+    const darkIcons = document.querySelectorAll('.theme-toggle-dark-icon');
+    const lightIcons = document.querySelectorAll('.theme-toggle-light-icon');
+
+    darkIcons.forEach(icon => {
+      if (isDark) {
+        icon.classList.remove('hidden');
+      } else {
+        icon.classList.add('hidden');
+      }
+    });
+
+    lightIcons.forEach(icon => {
+      if (isDark) {
+        icon.classList.add('hidden');
+      } else {
+        icon.classList.remove('hidden');
+      }
+    });
+  }
+
+  function toggleTheme() {
+    const currentTheme = getThemePreference();
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    localStorage.setItem('theme', newTheme);
+    updateAllThemeToggles();
+  }
+
+  // Initialize theme on load
+  if (typeof updateAllThemeToggles === 'undefined' || !window.themeInitialized) {
+    updateAllThemeToggles();
+    window.themeInitialized = true;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    themeToggles.forEach(toggle => {
+      toggle.addEventListener('click', toggleTheme);
+    });
+    updateAllThemeToggles();
+  });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (!localStorage.getItem('theme')) {
+      updateAllThemeToggles();
+    }
+  });
+</script>

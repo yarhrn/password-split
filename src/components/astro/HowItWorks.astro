@@ -1,0 +1,222 @@
+---
+import Check from '@lucide/astro/icons/check';
+import CircleCheck from '@lucide/astro/icons/circle-check';
+import FolderClosed from '@lucide/astro/icons/folder-closed';
+import KeyRound from '@lucide/astro/icons/key-round';
+import Rows3 from '@lucide/astro/icons/rows-3';
+---
+
+<section id="how-it-works" class="border-y border-gray-200 bg-white py-20 dark:border-gray-700 dark:bg-gray-800">
+  <div class="container mx-auto px-4">
+    <div class="mb-16 text-center">
+      <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">How Password Splitting Works</h2>
+      <p class="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-400">
+        Based on Shamir's Secret Sharing algorithm used by banks and governments worldwide
+      </p>
+    </div>
+
+    <div class="mb-16 grid gap-8 md:grid-cols-3">
+      <!-- Step 1 -->
+      <div class="relative text-center">
+        <div
+          class="absolute left-0 top-0 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white"
+        >
+          I
+        </div>
+        <div class="mb-8 pt-4">
+          <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900">
+            <CircleCheck color="#fb923c" />
+          </div>
+        </div>
+        <h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Split Your Password</h3>
+        <p class="mb-4 text-gray-600 dark:text-gray-400">
+          Enter your password and choose how many pieces to create. Set a threshold for how many pieces are needed to recover it.
+        </p>
+        <div class="rounded-lg bg-gray-50 p-4 text-sm dark:bg-gray-700">
+          <div class="font-mono text-primary-600 dark:text-primary-400">MySecretPassword123</div>
+          <div class="my-2 text-gray-500">↓ splits into ↓</div>
+          <div class="space-y-1">
+            <div class="font-mono text-xs text-gray-700 dark:text-gray-300">Part 1: a8f2k9...</div>
+            <div class="font-mono text-xs text-gray-700 dark:text-gray-300">Part 2: m3x7p1...</div>
+            <div class="font-mono text-xs text-gray-700 dark:text-gray-300">Part 3: r6n4v8...</div>
+            <div class="font-mono text-xs text-gray-700 dark:text-gray-300">Part 4: z1q5w2...</div>
+            <div class="font-mono text-xs text-gray-700 dark:text-gray-300">Part 5: h9j8k7...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="relative text-center">
+        <div
+          class="absolute left-0 top-0 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white"
+        >
+          II
+        </div>
+        <div class="mb-8 pt-4">
+          <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-secondary-100 dark:bg-secondary-900">
+            <FolderClosed color="#c084fc" />
+          </div>
+        </div>
+        <h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Store Pieces Safely</h3>
+        <p class="mb-4 text-gray-600 dark:text-gray-400">
+          Save each piece in different locations: cloud storage, USB drives, email, or give to trusted people.
+        </p>
+        <div class="space-y-3 rounded-lg bg-gray-50 p-4 text-sm dark:bg-gray-700">
+          <div class="flex items-center justify-between rounded bg-white p-2 dark:bg-gray-600">
+            <span class="text-xs text-gray-900 dark:text-white">📱 Phone</span>
+            <span class="font-mono text-xs text-gray-900 dark:text-white">Part 1</span>
+          </div>
+          <div class="flex items-center justify-between rounded bg-white p-2 dark:bg-gray-600">
+            <span class="text-xs text-gray-900 dark:text-white">☁️ Google Drive</span>
+            <span class="font-mono text-xs text-gray-900 dark:text-white">Part 2</span>
+          </div>
+          <div class="flex items-center justify-between rounded bg-white p-2 dark:bg-gray-600">
+            <span class="text-xs text-gray-900 dark:text-white">💾 USB Drive</span>
+            <span class="font-mono text-xs text-gray-900 dark:text-white">Part 3</span>
+          </div>
+          <div class="flex items-center justify-between rounded bg-white p-2 dark:bg-gray-600">
+            <span class="text-xs text-gray-900 dark:text-white">👤 Trusted Friend</span>
+            <span class="font-mono text-xs text-gray-900 dark:text-white">Part 4</span>
+          </div>
+          <div class="flex items-center justify-between rounded bg-white p-2 dark:bg-gray-600">
+            <span class="text-xs text-gray-900 dark:text-white">📧 Email Draft</span>
+            <span class="font-mono text-xs text-gray-900 dark:text-white">Part 5</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="relative text-center">
+        <div
+          class="absolute left-0 top-0 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-primary-600 text-sm font-bold text-white"
+        >
+          III
+        </div>
+        <div class="mb-8 pt-4">
+          <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-accent-100 dark:bg-accent-900">
+            <KeyRound color="#facc15" />
+          </div>
+        </div>
+        <h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white">Recover When Needed</h3>
+        <p class="mb-4 text-gray-600 dark:text-gray-400">
+          Gather your threshold number of pieces (e.g., any 3 out of 5) and reconstruct your original password.
+        </p>
+        <div class="rounded-lg bg-gray-50 p-4 text-sm dark:bg-gray-700">
+          <div class="mb-2 text-gray-500">Collect threshold pieces:</div>
+          <div class="mb-3 space-y-1">
+            <div class="font-mono text-xs text-green-600 dark:text-green-400">✓ Part 1: a8f2k9...</div>
+            <div class="font-mono text-xs text-red-500 line-through">✗ Part 2: lost</div>
+            <div class="font-mono text-xs text-green-600 dark:text-green-400">✓ Part 3: r6n4v8...</div>
+            <div class="font-mono text-xs text-green-600 dark:text-green-400">✓ Part 4: z1q5w2...</div>
+            <div class="font-mono text-xs text-red-500 line-through">✗ Part 5: lost</div>
+          </div>
+          <div class="my-2 text-gray-500">↓ reconstructs to ↓</div>
+          <div class="font-mono text-primary-600 dark:text-primary-400">MySecretPassword123</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Benefits -->
+    <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl dark:border-gray-700 dark:bg-gray-800">
+      <div class="grid divide-x divide-gray-200 dark:divide-gray-700 md:grid-cols-2">
+        <!-- Why This Works Better -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 dark:from-green-900/20 dark:to-emerald-900/20">
+          <div class="mb-4 flex items-center">
+            <div class="mr-3 flex h-8 w-8 items-center justify-center rounded-lg bg-green-500">
+              <CircleCheck color="white" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Why This Works Better</h3>
+          </div>
+
+          <div class="space-y-3">
+            {
+              [
+                {
+                  title: 'No Single Point of Failure',
+                  subtitle: 'Lose some pieces, password still recoverable',
+                },
+                {
+                  title: 'Cryptographically Secure',
+                  subtitle: 'Individual pieces reveal nothing about your password',
+                },
+                {
+                  title: 'Flexible Storage',
+                  subtitle: 'Use any combination of digital and physical storage',
+                },
+                {
+                  title: 'Perfect for Inheritance',
+                  subtitle: 'Family members can recover together',
+                },
+              ].map(reason => {
+                return (
+                  <div class="rounded-lg border border-green-200/50 bg-white/50 p-3 dark:border-green-700/30 dark:bg-gray-800/50">
+                    <div class="flex items-center">
+                      <div class="mr-3 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-500">
+                        <Check color="white" />
+                      </div>
+                      <div>
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white">{reason.title}</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-300">{reason.subtitle}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </div>
+
+        <!-- Common Use Cases -->
+        <div class="bg-gradient-to-br from-primary-50 to-orange-50 p-6 dark:from-primary-900/20 dark:to-orange-900/20">
+          <div class="mb-4 flex items-center">
+            <div class="mr-3 flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500">
+              <Rows3 color="white" />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Common Use Cases</h3>
+          </div>
+
+          <div class="space-y-3">
+            {
+              [
+                {
+                  title: 'Cryptocurrency Wallets',
+                  subtitle: 'Secure your master seed phrases and private keys',
+                  emoji: '🔐',
+                },
+                {
+                  title: 'Business Accounts',
+                  subtitle: 'Critical system passwords and admin access',
+                  emoji: '🏢',
+                },
+                {
+                  title: 'Password Manager',
+                  subtitle: 'Master password backup and recovery',
+                  emoji: '📱',
+                },
+                {
+                  title: 'Family Access',
+                  subtitle: 'Shared account recovery and inheritance planning',
+                  emoji: '🏠',
+                },
+              ].map(useCase => {
+                return (
+                  <div class="rounded-lg border border-primary-200/50 bg-white/50 p-3 dark:border-primary-700/30 dark:bg-gray-800/50">
+                    <div class="flex items-center">
+                      <div class="mr-3 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary-500 text-xs">
+                        {useCase.emoji}
+                      </div>
+                      <div>
+                        <h4 class="text-sm font-semibold text-gray-900 dark:text-white">{useCase.title}</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-300">{useCase.subtitle}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

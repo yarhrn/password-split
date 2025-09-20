@@ -1,0 +1,12 @@
+node_modules
+dist
+.astro
+.vscode
+.git
+*.log
+coverage
+.env
+.env.local
+.env.production.local
+.env.test.local
+*.tsbuildinfo

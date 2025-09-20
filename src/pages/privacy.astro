@@ -1,0 +1,129 @@
+---
+import Layout from '@root/components/astro/Layout.astro';
+---
+
+<Layout
+  title="Privacy Policy - Password Split"
+  description="Privacy policy for Password Split - your privacy is our priority. All password processing happens locally in your browser."
+>
+  <div class="px-4 py-16">
+    <div class="container mx-auto max-w-4xl">
+      <div class="mb-12 text-center">
+        <h1 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Privacy Policy</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400">Last updated: {new Date().toLocaleDateString()}</p>
+      </div>
+
+      <div class="rounded-xl border border-gray-200 bg-white p-8 shadow-lg transition-colors dark:border-gray-700 dark:bg-gray-800">
+        <div class="prose prose-gray dark:prose-invert max-w-none">
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Our Commitment to Your Privacy</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            At Password Split, your privacy is our top priority. This service is designed with privacy-by-design principles, ensuring that
+            your sensitive data never leaves your device.
+          </p>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">How Password Split Works</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            Password Split operates entirely within your web browser using client-side JavaScript. When you enter a password:
+          </p>
+          <ul class="mb-6 list-disc pl-6 text-gray-600 dark:text-gray-400">
+            <li>All cryptographic operations happen locally on your device</li>
+            <li>No passwords or sensitive data are transmitted to our servers</li>
+            <li>No passwords are stored, logged, or cached anywhere</li>
+            <li>The splitting and reconstruction process uses Shamir's Secret Sharing algorithm entirely in your browser</li>
+          </ul>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Data Collection</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            We collect minimal personal information only during the checkout process for payment processing. Specifically:
+          </p>
+          <ul class="mb-6 list-disc pl-6 text-gray-600 dark:text-gray-400">
+            <li><strong>No password data:</strong> Your passwords never leave your browser</li>
+            <li>
+              <strong>Checkout information only:</strong> We collect PII (name, email, billing address) solely during checkout for payment processing
+            </li>
+            <li><strong>No data resale:</strong> We never sell, share, or distribute your personal information to third parties</li>
+            <li>
+              <strong>Limited retention:</strong> Personal information is only retained as necessary for payment processing and support
+            </li>
+            <li><strong>No usage tracking:</strong> We don't track how you use the service</li>
+            <li><strong>No tracking cookies:</strong> We don't use tracking cookies or similar technologies</li>
+            <li><strong>No analytics:</strong> We don't use Google Analytics or similar services</li>
+          </ul>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Technical Implementation</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">Our service uses proven cryptographic methods:</p>
+          <ul class="mb-6 list-disc pl-6 text-gray-600 dark:text-gray-400">
+            <li><strong>Shamir's Secret Sharing:</strong> Industry-standard algorithm for splitting secrets</li>
+            <li><strong>Client-side processing:</strong> All operations run in your browser</li>
+            <li><strong>Split password flow:</strong> Completely client-side with no server interaction</li>
+            <li><strong>Reconstruct password flow:</strong> Completely client-side with no server interaction</li>
+            <li><strong>License purchase:</strong> Requires interaction with payment provider (Stripe) for checkout processing</li>
+            <li><strong>Open source:</strong> Our code is transparent and auditable</li>
+          </ul>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Server Logs</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            Like most websites, our web server may collect basic technical information such as:
+          </p>
+          <ul class="mb-6 list-disc pl-6 text-gray-600 dark:text-gray-400">
+            <li>IP addresses for security and performance purposes</li>
+            <li>Browser type and version for compatibility</li>
+            <li>Page access times for performance monitoring</li>
+          </ul>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            This information is used solely for maintaining service security and performance. It cannot be used to identify individual users
+            and is not linked to any passwords or sensitive data.
+          </p>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Third-Party Services</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            Password Split does not integrate with any third-party analytics, advertising, or tracking services. We only use the following
+            third-party services:
+          </p>
+          <ul class="mb-6 list-disc pl-6 text-gray-600 dark:text-gray-400">
+            <li><strong>Stripe:</strong> Used solely for payment processing during checkout</li>
+            <li><strong>Cloudflare:</strong> Used for hosting and content delivery</li>
+          </ul>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            These services do not have access to your password data, which remains entirely within your browser.
+          </p>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Security Recommendations</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">For maximum security when using Password Split:</p>
+          <ul class="mb-6 list-disc pl-6 text-gray-600 dark:text-gray-400">
+            <li>Use the service on a trusted device and network</li>
+            <li>Clear your browser's memory/cache after use if on a shared device</li>
+            <li>Store the generated fragments securely and separately</li>
+            <li>Consider using the service offline after the initial page load</li>
+          </ul>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Changes to This Policy</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            If we make changes to this privacy policy, we will update the "Last updated" date at the top of this page. Since we don't
+            collect contact information, we cannot notify users directly of changes.
+          </p>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Open Source Transparency</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            Password Split is open source software. You can review our code, verify our privacy claims, and even run the service yourself.
+            This transparency ensures that our privacy commitments are verifiable.
+          </p>
+
+          <h2 class="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Contact</h2>
+          <p class="mb-6 text-gray-600 dark:text-gray-400">
+            If you have questions about this privacy policy or our privacy practices, you can contact us through our project repository or
+            website.
+          </p>
+
+          <div class="mt-8 rounded-lg bg-primary-50 p-6 dark:bg-primary-900/20">
+            <h3 class="mb-2 text-lg font-semibold text-primary-900 dark:text-primary-100">Privacy Summary</h3>
+            <p class="text-primary-700 dark:text-primary-300">
+              <strong>Your passwords never leave your device.</strong> Password Split processes everything locally in your browser, ensuring
+              complete privacy and security of your sensitive data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

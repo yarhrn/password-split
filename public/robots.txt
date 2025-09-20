@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://passwordsplit.com/sitemap-index.xml
+Sitemap: https://passwordsplit.com/sitemap-0.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Block access to sensitive areas (none for this project, but good practice)
+# Disallow: /admin/
+# Disallow: /private/
