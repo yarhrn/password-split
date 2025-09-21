@@ -159,6 +159,18 @@ export default function LicenseModal({ isOpen, onClose, store, sessionId }: Lice
                     reconstruct their passwords when needed. The goal is to maintain this project indefinitely and add new features to make
                     it even more secure and useful.
                   </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    The source code is available on{' '}
+                    <a
+                      href="https://github.com/yarhrn/password-split"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-600 underline hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                    >
+                      GitHub
+                    </a>{' '}
+                    so you can inspire from it.
+                  </p>
                   <p className="text-sm text-gray-600 dark:text-gray-400">New features include but are not limited to:</p>
                   <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                     <li className="flex items-start">
