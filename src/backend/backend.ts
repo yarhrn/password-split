@@ -37,6 +37,13 @@ export const createCheckoutSession = async () => {
   return body as unknown as CreateCheckoutSessionResponse;
 };
 
+export const reportEvent = async (event: string) => {
+  await fetch('https://api.omegaparcel.com/api/passwordsplit/report-event', {
+    method: 'POST',
+    body: JSON.stringify({ event }),
+  });
+};
+
 export const getCheckoutSession = async (sessionId: string) => {
   let response = await fetch('https://api.omegaparcel.com/api/passwordsplit/get-checkout-session', {
     method: 'POST',

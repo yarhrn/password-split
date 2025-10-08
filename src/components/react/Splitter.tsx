@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import Input from '@root/components/react/system/Input.tsx';
 import Button from '@root/components/react/system/Button.tsx';
 import IconButton from '@root/components/react/system/IconButton.tsx';
-import LicenseModal from '@root/components/react/system/LicenseModal.tsx';
-import LicenseTimer from '@root/components/react/system/LicenseTimer.tsx';
 import { type Part, encodePartToBase64 } from '@root/ssss/shamir.tsx';
 import { partToHTML, partsToHTML } from '@root/ssss/html.tsx';
 import { useStore } from './splitterStore';
+
+const REQUIRE_LICENSE = false;
 
 interface SplitterProps {
   sessionId?: string | null;
@@ -108,7 +108,6 @@ export default function Splitter({ sessionId }: SplitterProps) {
 
   return (
     <>
-      <LicenseModal store={store} isOpen={showLicenseModal} onClose={handleCloseModal} sessionId={sessionId || undefined} />
       <div className="space-y-6">
         <Input
           label="Password to Split"
@@ -156,7 +155,6 @@ export default function Splitter({ sessionId }: SplitterProps) {
         </div>
 
         <div className="space-y-3">
-          {licenseKey && licenseKey.expiresAt && <LicenseTimer expiresAt={licenseKey.expiresAt} />}
           <Button onClick={handleSplit} disabled={!password?.trim()} variant="primary" size="lg" fullWidth>
             Split Password
           </Button>

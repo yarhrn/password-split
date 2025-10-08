@@ -1,6 +1,7 @@
 import { decodePartFromBase64, reconstruct, type Part } from '@root/ssss/shamir';
 import { isLeft, isRight } from '@root/ssss/either';
 import { create } from 'zustand';
+import { reportEvent } from '@root/backend/backend';
 
 export interface PartWithUI {
   part: Part;
@@ -148,6 +149,7 @@ export const useReconstructorStore = create<ReconstructorStore>()((set, get) => 
 
         if (isRight(result)) {
           set({ reconstructedPassword: result.value.secret });
+          reportEvent('reconstruct');
           return 'SUCCESS';
         }
 
