@@ -1,3 +1,5 @@
+import { reportEvent } from '@root/backend/backend';
+
 type BotCheckResult = {
   isBot: boolean;
   reason?: string;
@@ -48,15 +50,7 @@ export const trackPageView = async () => {
       return;
     }
 
-    await fetch('https://api.omegaparcel.com/api/passwordsplit/report-event', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        event: 'page_view',
-      }),
-    });
+    await reportEvent('page_view');
   } catch (error) {
     console.error('Analytics tracking failed:', error);
   }

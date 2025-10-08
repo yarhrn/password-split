@@ -40,7 +40,7 @@ export const createCheckoutSession = async () => {
 export const reportEvent = async (event: string) => {
   await fetch('https://api.omegaparcel.com/api/passwordsplit/report-event', {
     method: 'POST',
-    body: JSON.stringify({ event }),
+    body: JSON.stringify({ event, path: window.location.pathname }),
   });
 };
 
