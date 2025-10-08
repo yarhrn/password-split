@@ -155,5 +155,15 @@ const siteName = 'Password Split';
     </script>
 
     <Footer />
+
+    <script>
+      import { trackPageView } from '@root/scripts/analytics';
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', trackPageView);
+      } else {
+        trackPageView();
+      }
+    </script>
   </body>
 </html>
