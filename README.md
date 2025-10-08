@@ -49,19 +49,6 @@ Demo: try with the sample password `MyPassword123` without a license. For custom
 - If you lose enough parts to fall below the threshold, recovery is impossible by design.
 - Store parts separately and securely; never keep all parts together.
 
-## Tech Stack
-
-- Astro + React + TypeScript
-- Tailwind CSS for styling
-- Zustand for state management
-- WebCrypto API (AES‑GCM) + `shamir-secret-sharing`
-- Lucide icons
-
-## Requirements
-
-- Node.js 18+ (recommended for Astro 5)
-- pnpm, npm, or pnpm
-
 ## Getting Started
 
 Install dependencies:
